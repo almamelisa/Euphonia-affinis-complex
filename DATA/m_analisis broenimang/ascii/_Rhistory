@@ -1,0 +1,157 @@
+bio1<-raster("../data/shapes/bio_1.bil")
+library(dismo)
+library(maptools)
+library(sp)
+library(ATR)
+library(rgdal)
+library(raster)
+library(ecospat)
+library(SDMTools)
+library(dismo)
+bio1<-raster("../data/shapes/bio_1.bil")
+setwd("C:/Users/Melisa1/Desktop/seminario_enm/bin")
+bio1<-raster("../data/shapes/bio_1.bil")
+setwd("C:/Users/Melisa1/Desktop/proyectoaffinis/bin")
+bio1<-raster("../data/shapes/bio_1.bil")
+setwd("C:/Users/Melisa1/Desktop/proyectoaffinis/enm/bin")
+bio1<-raster("../data/shapes/bio_1.bil")
+bio2<-raster("../data/shapes/bio_2.bil")
+bio3<-raster("../data/shapes/bio_3.bil")
+bio4<-raster("../data/shapes/bio_4.bil")
+bio5<-raster("../data/shapes/bio_5.bil")
+bio6<-raster("../data/shapes/bio_6.bil")
+bio7<-raster("../data/shapes/bio_7.bil")
+bio8<-raster("../data/shapes/bio_8.bil")
+bio9<-raster("../data/shapes/bio_9.bil")
+bio10<-raster("../data/shapes/bio_10.bil")
+bio11<-raster("../data/shapes/bio_11.bil")
+bio12<-raster("../data/shapes/bio_12.bil")
+bio13<-raster("../data/shapes/bio_13.bil")
+bio14<-raster("../data/shapes/bio_14.bil")
+bio15<-raster("../data/shapes/bio_15.bil")
+bio16<-raster("../data/shapes/bio_16.bil")
+bio17<-raster("../data/shapes/bio_17.bil")
+bio18<-raster("../data/shapes/bio_18.bil")
+bio19<-raster("../data/shapes/bio_19.bil")
+plot(bio1)
+#Loding the Neotropical shapefile
+neotropical<-readOGR(dsn = "../data/neo_SHP", layer = "Lowenberg_Neto_2014")
+plot(neotropical)
+dataaffinis<-read.csv(file = "../data/puntosaffinis.csv", sep = ",", header = T)
+head(dataaffinis)
+datagodmani<-read.csv(file = "../data/puntosgodmani.csv", sep = ",", header = T)
+head(datagodmani)
+points(dataaffinis$Longitud, dataaffinis$Latitud, col = "red", cex = .4, pch = 16)
+points(datagodmani$Longitud, datagodmani$Latitud, col = "blue", cex = .4, pch = 16)
+str(neotropical)
+provinceaffinis<- c("13", "3", "14", "4", "15", "2", "5","16","17","19", "18")
+maffinis<- neotropical[as.character(neotropical@data$NUMB) %in% provinceaffinis,]
+maffinis<-crop(maffinis, c(-100.1, -77.71112, 7.218689, 27.75952))
+plot(maffinis)
+maffinis<- neotropical[as.character(neotropical@data$NUMB) %in% provinceaffinis,]
+plot(maffinis)
+maffinis<-crop(maffinis, c(-100.1, -77.71112, 7.218689, 27.75952))
+plot(maffinis)
+#Crop the raster file for bioclimatic variables
+bio1.c <- crop(bio1, extent(maffinis))
+bio1.c <- mask(bio1.c, maffinis)
+plot(bio1.c)
+bio2.c <- crop(bio2, extent(maffinis))
+bio2.c <- mask(bio2.c, maffinis)
+bio3.c <- crop(bio3, extent(maffinis))
+bio3.c <- mask(bio3.c, maffinis)
+bio4.c <- crop(bio4, extent(maffinis))
+bio4.c <- mask(bio4.c, maffinis)
+bio5.c <- crop(bio5, extent(maffinis))
+bio5.c <- mask(bio5.c, maffinis)
+bio6.c <- crop(bio6, extent(maffinis))
+bio6.c <- mask(bio6.c, maffinis)
+bio7.c <- crop(bio7, extent(maffinis))
+bio7.c <- mask(bio7.c, maffinis)
+bio8.c <- crop(bio8, extent(maffinis))
+bio8.c <- mask(bio8.c, maffinis)
+bio9.c <- crop(bio9, extent(maffinis))
+bio9.c <- mask(bio9.c, maffinis)
+bio10.c <- crop(bio10, extent(maffinis))
+bio10.c <- mask(bio10.c, maffinis)
+bio11.c <- crop(bio11, extent(maffinis))
+bio11.c <- mask(bio11.c, maffinis)
+bio12.c <- crop(bio12, extent(maffinis))
+bio12.c <- mask(bio12.c, maffinis)
+bio13.c <- crop(bio13, extent(maffinis))
+bio13.c <- mask(bio13.c, maffinis)
+bio14.c <- crop(bio14, extent(maffinis))
+bio14.c <- mask(bio14.c, maffinis)
+bio15.c <- crop(bio15, extent(maffinis))
+bio15.c <- mask(bio15.c, maffinis)
+bio16.c <- crop(bio16, extent(maffinis))
+bio16.c <- mask(bio16.c, maffinis)
+bio17.c <- crop(bio17, extent(maffinis))
+bio17.c <- mask(bio17.c, maffinis)
+bio18.c <- crop(bio18, extent(maffinis))
+bio18.c <- mask(bio18.c, maffinis)
+bio19.c <- crop(bio19, extent(maffinis))
+bio19.c <- mask(bio19.c, maffinis)
+provincegodmani<- c("13", "4")
+mgodmani<- neotropical[as.character(neotropical@data$NUMB) %in% provincegodmani,]
+mgodmani<- neotropical[as.character(neotropical@data$NUMB) %in% provincegodmani,]
+plot(mgodmani)
+affvaluesbio1 <- extract(bio1.c,acsel)
+godvaluesbio1 <- extract(bio1.c, acsel2)
+library(dismo)
+library(maptools)
+library(sp)
+library(ATR)
+library(rgdal)
+library(raster)
+library(ecospat)
+library(SDMTools)
+library(dismo)
+################## Extracting values from raster ###################
+#bio1
+affvaluesbio1 <- extract(bio1.c,acsel)
+#Crop the raster file for bioclimatic variables
+bio1.c <- crop(bio1, extent(maffinis))
+bio1.c <- mask(bio1.c, maffinis)
+################## Extracting values from raster ###################
+#bio1
+affvaluesbio1 <- extract(bio1.c,acsel)
+################## Extracting values from raster ###################
+#bio1
+affvaluesbio1 <- extract(bio1.c,acsel)
+################## Extracting values from raster ###################
+#bio1
+affvaluesbio1<-extract(bio1.c)
+################## Extracting values from raster ###################
+#bio1
+affvaluesbio1<-extract(bio1.c)
+aa <- read.csv("../data/affinis_puntos limpios.csv", header=TRUE)
+bb <- read.csv("../data/godmani_puntos limpios.csv", header=TRUE)
+# The layers have to be cut by the relevant geographic area for the comparison of niches
+setwd("../data/m_analisis broenimang/ascii/")
+varclim <- stack(list.files(pattern = "*.asc$",full.names = T))
+resol <- res(varclim)[1]
+# Generate a table that for each pixel (coordinate x, y) with the values of all environmental variables
+climpunto <- rasterToPoints(varclim[[1]], fun=NULL, spatial=TRUE)
+# Extract environmental data for each layer in varclim of each coordinate in climpoint
+clim <- extract(varclim, climpunto)
+# Format the clim table to be a normal table with two first columns x and y
+clim <- data.frame(coordinates(climpunto),clim)
+clim <- subset(clim, !is.na(bio3) & !is.na(bio5) & !is.na(bio6) & !is.na(bio7) & !is.na(bio8)
+& !is.na(bio9) & !is.na(bio10) & !is.na(bio14) & !is.na(bio15) & !is.na(bio16)
+& !is.na(bio17)& !is.na(bio18))
+# Delete  points that are less than 1 km away
+# If 1 grade = 111 km , so 1 km = 0.008333
+occ.sp1 <- aa[2:3]
+occ.sp2 <- bb[2:3]
+#Make a dataframe with the geographic points and enviromental values
+occ_sp1<-na.exclude(ecospat.sample.envar(dfsp=occ.sp1,colspxy=1:2,
+colspkept=1:2,dfvar=clim,
+colvarxy=1:2,colvar="all",resolution=0.008333))
+occ_sp2<-na.exclude(ecospat.sample.envar(dfsp=occ.sp2,colspxy=1:2,
+colspkept=1:2,dfvar=clim, colvarxy=1:2,
+colvar="all",resolution=0.008333))
+#Iterations
+iterations<-1000
+# Enviromental resolution for the density presences
+R=100
