@@ -82,7 +82,7 @@ plot(bio19)
 #############################################################################
 
 #Loding the Neotropical shapefile
-neotropical<-readOGR(dsn = "../data/neo_SHP", layer = "Lowenberg_Neto_2014")
+neotropical<-readOGR(dsn = "../data/Neo_SHP", layer = "Lowenberg_Neto_2014")
 plot(neotropical)
 neotropical$NUMB #see Morrone, 2014 to identified the poligon's numbers with the regionalization
 
