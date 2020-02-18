@@ -1,0 +1,27 @@
+[General]
+Creator=WorldClim
+Title=BIO3 = 'Isothermality (BIO2/BIO7) (* 100)
+'Created=20080220
+
+[GeoReference]
+Projection=GEOGRAPHIC
+Datum=WGS84
+Mapunits=Degrees
+Columns=43200
+Rows=18000
+MinX=-180
+MaxX=180
+MinY=-60
+MaxY=90
+ResolutionX=0.008333333333333333
+ResolutionY=0.008333333333333333
+
+[Data]
+MinValue=-4
+MaxValue=93
+NoDataValue=-9999
+DataType=SMALLINT
+Transparent=1
+Units=' 
+[Application]
+Opt0=Model:lig

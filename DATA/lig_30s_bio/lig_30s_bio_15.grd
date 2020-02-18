@@ -1,0 +1,27 @@
+[General]
+Creator=WorldClim
+Title=BIO15 = 'Precipitation Seasonality (Coefficient of Variation)
+'Created=20080220
+
+[GeoReference]
+Projection=GEOGRAPHIC
+Datum=WGS84
+Mapunits=Degrees
+Columns=43200
+Rows=18000
+MinX=-180
+MaxX=180
+MinY=-60
+MaxY=90
+ResolutionX=0.008333333333333333
+ResolutionY=0.008333333333333333
+
+[Data]
+MinValue=0
+MaxValue=322
+NoDataValue=-9999
+DataType=SMALLINT
+Transparent=1
+Units='mm
+[Application]
+Opt0=Model:lig
