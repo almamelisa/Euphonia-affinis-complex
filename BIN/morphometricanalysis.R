@@ -260,7 +260,7 @@ fviz_pca_biplot(bothsexpca,
 
 
 #################################################################
-##         LINEAGES DIFFENCES USING FEMALES                    ##
+##         LINEAGES DIFFERENCES USING FEMALES                  ##
 #################################################################
 
 #finding differences between lineages affinis vs. godmani in females
