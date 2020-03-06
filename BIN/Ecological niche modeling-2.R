@@ -25,9 +25,9 @@ library(dismo)
 library(ecospat)
 #### Loading species ocurrence data E. a. affinis and E. a. godmani####
 
-dataaffinis<-read.csv(file = "../data/puntosaffinis.csv", sep = ",", header = T)
+dataaffinis<-read.csv(file = "../data/pointsaffinis.csv", sep = ",", header = T)
 head(dataaffinis)
-datagodmani<-read.csv(file = "../data/puntosgodmani.csv", sep = ",", header = T)
+datagodmani<-read.csv(file = "../data/pointsgodmani.csv", sep = ",", header = T)
 head(datagodmani)
 
 ################# PREPARING THE RASTER FILES##########################
@@ -430,8 +430,8 @@ corr_g<-ecospat.cor.plot(godvalues)
 # af = E. a. affinis
 # gd = E. a. godmani
 
-af <- read.csv("../data/affinis_puntos limpios.csv", header=TRUE)
-gd <- read.csv("../data/godmani_puntos limpios.csv", header=TRUE)
+af <- read.csv("../data/affinis_cleandata.csv", header=TRUE)
+gd <- read.csv("../data/godmani_cleandata.csv", header=TRUE)
 
 # The layers have to be cut by the relevant geographic area for the comparison of niches
 
