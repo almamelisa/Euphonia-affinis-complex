@@ -1,4 +1,4 @@
-DATA DESCRIPTION
+# DATA DESCRIPTION
 
 * Folder `Neo_SHP`.- Neotropical regionalisation shape: Löwenberg-Neto, Peter. 2014. Neotropical region: a shapefile of Morrone's (2014) biogeographical regionalisation. *Zootaxa* 3802 (2): 300-300. http://dx.doi.org/10.11646/zootaxa.3802.2.12 
 
@@ -22,3 +22,21 @@ DATA DESCRIPTION
 * Folder `mrlgmbi_2-5_LGM`.- Layers for Last Maximum Glacia by MRLGMBI model, obtained from https://www.worldclim.org
 
 * Folder `shapes`.- Present layers obtained from https://www.worldclim.org 
+
+* `affinis_cleandata.csv`.- Geographic points for Ecological Niche Modelling to *E. a. godmani* after one run of Maxent to avoid replicated points.
+
+* `godmani_cleandata.csv`.- Geographic points for Ecological Niche Modelling to *E. a. godmani* after one run of Maxent to avoid replicated points. 
+
+* `pointsaffinis.csv`.- Raw geographic points for Ecological Niche Modelling for *E. a. affinis*.
+
+* `pointsgodmani.csv`.- Raw geographic points for Ecological Niche Modelling for *E. a. godmani*.
+
+* `brm.txt`.- Sequences for 15-intron BRM gene.
+
+* `gapdh.txt`.- Sequences for 11-intron GAPDH gene.
+
+* `musk.txt`.- Sequences for MUSK gene.
+
+* `nd2.txt`.- Sequences for ND2 gene.
+
+* `nd2_odc_gapdh.nxs`.- Concatenated Aligment for ND2, ODC and GAPDH sequences to molecular clock.  
