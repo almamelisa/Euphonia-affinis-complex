@@ -87,7 +87,7 @@ plot(neotropical)
 neotropical$NUMB #see Morrone, 2014 to identified the poligon's numbers with the regionalization
 
 
-#Plotting points in the neotropical shapefile 
+#Plotting points in the neotropical shapefile to select the regions from Morrone's Neotropical regionalisation where at leats one point ocurrences.
 
 points(dataaffinis$Longitud, dataaffinis$Latitud, col = "red", cex = .4, pch = 16)
 points(datagodmani$Longitud, datagodmani$Latitud, col = "blue", cex = .4, pch = 16)
